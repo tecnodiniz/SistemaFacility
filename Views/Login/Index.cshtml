@@ -1,0 +1,98 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <title>Gerenciamento de Veiculos</title>
+
+
+    <style>
+        .container {
+            width: 100vw;
+            height: 100vh;
+            background: #6C7A89;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .box {
+            width: 300px;
+            height: 300px;
+            background: #fff;
+        }
+
+        .box-content {
+            padding: 30px;
+            text-align: center;
+        }
+
+        body {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        span {
+            color: red;
+        }
+    </style>
+
+</head>
+<body>
+    <div class="container">
+        <div class="box">
+            <div style="height:15px; background-color:blue;">
+
+            </div>
+            <div class="box-content">
+
+
+                <h2>Login</h2>
+
+                <form class="g-3" action="/Login/ChecarLogin" method="post">
+                    <span>@ViewBag.Erro</span>
+                    <div class="col-auto">
+
+                        <input type="text" class="form-control" id="login" name="login" placeholder="Enter Login" />
+                    </div>
+                    <div class="col-auto" style="margin-top:5px;">
+
+                        <input type="password" class="form-control" id="senha" name="senha" placeholder="password">
+                    </div>
+                    <div class="col-auto ">
+                        <button type="submit" style="margin-top:10px; width:100%;" class="btn btn-primary mb-3">Confirm identity</button>
+                    </div>
+                    <p style="margin-top:10px;">Não é registrado? <span><a href="#">Crie uma conta</a></span></p>
+                </form>
+
+
+            </div>
+
+
+
+
+
+
+        </div>
+
+
+    </div>
+
+
+</body>
+</html>
+
+
+
+
+
+
