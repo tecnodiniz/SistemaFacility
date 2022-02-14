@@ -10,18 +10,19 @@ namespace SistemaFB.Controllers
     {
         public ActionResult Index()
         {
-            if (Session["Autorizado"] != null)
-            {
-                ViewBag.Usuario = "Admin";
-                return View();
+            /* if (Session["Autorizado"] != null)
+             {
+                 ViewBag.Usuario = "Admin";
+                 return View();
 
-            }
-            else
-            {
-                //Response.Redirect("/Login/Index");
-                //return null;
-                return RedirectToAction("Index", "Login");
-            }
+             }
+             else
+             {
+                 //Response.Redirect("/Login/Index");
+                 //return null;
+                 return RedirectToAction("Index", "Login");
+             }*/
+            return View();
         }
 
         public ActionResult About()
