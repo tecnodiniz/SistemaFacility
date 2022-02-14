@@ -10,10 +10,11 @@ namespace SistemaFB.Controllers
     {
         public ActionResult Index()
         {
-            /* if (Session["Autorizado"] != null)
+             if (Session["Autorizado"] != null)
              {
                  ViewBag.Usuario = "Admin";
-                 return View();
+                 ViewBag.Nome = Session["Usuario"].ToString();
+                return View();
 
              }
              else
@@ -21,8 +22,9 @@ namespace SistemaFB.Controllers
                  //Response.Redirect("/Login/Index");
                  //return null;
                  return RedirectToAction("Index", "Login");
-             }*/
-            return View();
+             }
+           
+            
         }
 
         public ActionResult About()

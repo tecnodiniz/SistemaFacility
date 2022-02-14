@@ -7,28 +7,73 @@
     <title>@ViewBag.Title - Meu Aplicativo ASP.NET</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
+    <style>
+       
+        .navbar-light{
+            color: #fff!important;
+            background-color: #FFF;
+        }
+            .navbar-light .navbar-nav > li > a:hover, .navbar-inverse .navbar-nav > li > a:focus {
+                color: #000000;
+                background-color: transparent;
+            }
+        .navbar-light .navbar-nav > li > a {
+            color: #9d9d9d;
+        }
+
+        body {
+            font-family:Arial;
+            background-color: #9d9d9d;
+        }
+        .body-content{
+            height:100vh;
+            padding-top:40px;
+            
+        }
+        .shadow-b {
+            box-shadow: 0px 0px 16px 0px rgb(0 0 0 /50%);
+        }
+        .logo {
+            float: left;
+            height: 60px;
+            padding: 8px 5px;
+            font-size: 18px;
+            line-height: 20px;
+        }
+        .logo img{
+            height:100%;
+            width:auto;
+        }
+
+    </style>
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar navbar-light navbar-fixed-top shadow-b">
         <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                @Html.ActionLink("Nome do aplicativo", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            <div class="row">
+                <div class="navbar-header ">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <div class="logo navbar-brand ">
+                        <img src="~/Content/img/fblogo.gif" class="img-responsive" />
+                    </div>
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li>@Html.ActionLink("Início", "Index", "Home")</li>
+                        <li>@Html.ActionLink("Sobre", "About", "Home")</li>
+                        <li>@Html.ActionLink("Contato", "Contact", "Home")</li>
+                    </ul>
+                </div>
+
             </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Início", "Index", "Home")</li>
-                    <li>@Html.ActionLink("Sobre", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contato", "Contact", "Home")</li>
-                </ul>
-            </div>
+            
         </div>
     </div>
-    <div class="container body-content">
+    <div class="container body-content" style="background-color:#FFFFFF;">
         @RenderBody()
         <hr />
         <footer>
