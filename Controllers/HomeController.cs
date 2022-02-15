@@ -34,9 +34,9 @@ namespace SistemaFB.Controllers
             return View();
         }
 
-        public ActionResult Contact()
+        public ActionResult Clientes()
         {
-            ViewBag.Message = "Your contact page.";
+            ViewBag.Message = "Your Client page.";
 
             return View();
         }

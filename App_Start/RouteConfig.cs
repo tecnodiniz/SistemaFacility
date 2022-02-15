@@ -18,6 +18,11 @@ namespace SistemaFB
                 "Login/",
                 new { Controller = "Login", Action = "Index"}
                 );
+            routes.MapRoute(
+               "Clientes",
+               "Home/Clientes",
+               new { Controller = "Home", Action = "Clientes" }
+               );
 
             routes.MapRoute(
                 name: "Default",
