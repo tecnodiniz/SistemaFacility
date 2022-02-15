@@ -134,6 +134,8 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\img\background.jpg" />
+    <Content Include="Content\img\EpData-un-excelente-recurso-que-te-permite-buscar-graficos.jpg" />
     <Content Include="Content\img\fblogo.png" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />

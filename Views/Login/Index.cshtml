@@ -18,7 +18,7 @@
         .container {
             width: 100vw;
             height: 100vh;
-            background: #6C7A89;
+            
             display: flex;
             flex-direction: row;
             justify-content: center;
@@ -31,13 +31,16 @@
             height:auto;
             background: #fff;
             border-radius:8px;
+            border:solid 1px #adb5bd  ;
         }
-
+        
         .box-content {
             padding: 30px;
             text-align: center;
         }
-
+        .shadow-m {
+            box-shadow: 0 3px 4px rgba(0, 0, 0, 0.2);
+        }
         body {
             margin: 0px;
             padding: 0px;
@@ -46,15 +49,17 @@
         span {
             color: red;
         }
+        body {
+            background-image:url(/Content/img/background.jpg)
+        }
     </style>
+    
 
 </head>
 <body>
     <div class="container">
-        <div class="box">
-            <div style="height:15px; background-color:blue;">
-
-            </div>
+        <div class="box shadow-m">
+          
             <div class="box-content">
 
 
