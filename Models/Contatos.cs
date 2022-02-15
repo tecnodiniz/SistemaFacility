@@ -7,7 +7,7 @@ using System.Web.Configuration;
 
 namespace SistemaFB.Models
 {
-    public class Clientes
+    public class Contatos
     {
         private readonly static string _conn = WebConfigurationManager.ConnectionStrings["conn"].ConnectionString;
 
@@ -23,9 +23,9 @@ namespace SistemaFB.Models
         public string Cidade { get; set; }
         public string Bairro { get; set; }
 
-        public Clientes() { }
+        public Contatos() { }
 
-        public Clientes(int id, string nome, string cnpj, string email, string endereco, string numero, string complemento, 
+        public Contatos(int id, string nome, string cnpj, string email, string endereco, string numero, string complemento, 
             string cep, string uf, string cidade, string bairro)
         {
             Id = id;
@@ -41,10 +41,10 @@ namespace SistemaFB.Models
             Bairro = bairro;
         }
 
-        public static List<Clientes> GetClientes()
+        public static List<Contatos> GetClientes()
         {
 
-            var listaClientes = new List<Clientes>();
+            var listaContatos= new List<Contatos>();
             var sql = "SELECT TOP 10 * FROM Clientes ORDER BY CNPJ DESC";
             try
             {
@@ -58,7 +58,7 @@ namespace SistemaFB.Models
                             {
                                 while (dr.Read())
                                 {
-                                    listaClientes.Add(new Clientes(
+                                    listaContatos.Add(new Contatos(
                                         Convert.ToInt32(dr["id"]),
                                         dr["Nome"].ToString(),
                                         dr["CNPJ"].ToString(),
@@ -84,7 +84,7 @@ namespace SistemaFB.Models
             {
                 Console.WriteLine("Falha", ex.Message);
             }
-            return listaClientes;
+            return listaContatos;
 
         }
 

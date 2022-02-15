@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using SistemaFB.Models;
 
 namespace SistemaFB.Controllers
 {
@@ -37,6 +38,9 @@ namespace SistemaFB.Controllers
         public ActionResult Clientes()
         {
             ViewBag.Message = "Your Client page.";
+
+            var lista = Contatos.GetClientes();
+            ViewBag.lista = lista;
 
             return View();
         }
