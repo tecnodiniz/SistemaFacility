@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using SistemaFB.Models;
 
 namespace SistemaFB.Controllers
 {
@@ -10,10 +11,11 @@ namespace SistemaFB.Controllers
     {
         public ActionResult Index()
         {
-            /* if (Session["Autorizado"] != null)
+             if (Session["Autorizado"] != null)
              {
                  ViewBag.Usuario = "Admin";
-                 return View();
+                 ViewBag.Nome = Session["Usuario"].ToString();
+                return View();
 
              }
              else
@@ -21,8 +23,9 @@ namespace SistemaFB.Controllers
                  //Response.Redirect("/Login/Index");
                  //return null;
                  return RedirectToAction("Index", "Login");
-             }*/
-            return View();
+             }
+           
+            
         }
 
         public ActionResult About()
@@ -32,9 +35,12 @@ namespace SistemaFB.Controllers
             return View();
         }
 
-        public ActionResult Contact()
+        public ActionResult Clientes()
         {
-            ViewBag.Message = "Your contact page.";
+            ViewBag.Message = "Your Client page.";
+
+            var lista = Contatos.GetClientes();
+            ViewBag.lista = lista;
 
             return View();
         }

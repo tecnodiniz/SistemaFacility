@@ -13,7 +13,10 @@ namespace SistemaFB.Controllers
         public ActionResult Index()
         {
             if (Session["Erro"] != null)
-               ViewBag.Erro = Session["Erro"].ToString();
+            {
+                ViewBag.Erro = Session["Erro"].ToString();
+            }
+              
             return View();
         }
 
@@ -29,7 +32,7 @@ namespace SistemaFB.Controllers
             {
                 Session["Autorizado"] = "OK";
                 Session.Remove("Erro");
-                Session["Usuario"] = usuario.Login;
+                Session["Usuario"] = usuario.Nome;
 
                 Response.Redirect("/Home/Index");
             }

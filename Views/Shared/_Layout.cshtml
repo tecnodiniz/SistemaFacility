@@ -4,31 +4,151 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - Meu Aplicativo ASP.NET</title>
+    <title>@ViewBag.Title - Siste de Controle FacilityBond</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
+    <style>
+        .user{
+          
+           cursor:pointer;
+          
+           
+            
+        }
+        .table > tbody > tr,th {
+            text-align: center;
+        }
+        .table > tbody > tr > td {
+            padding: 8px;
+            font-size: 12px;
+            white-space:nowrap;
+            cursor:pointer;
+        }
+            .table > tbody > tr > th {
+                color: #0d65d9;
+                background-color:#f5f5f5;
+            }
+        .table-hover > tbody > tr:hover {
+            background-color: #94bdf2;
+        }
+        .personiddon {
+            padding: 6px 12px;
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 1;
+            color: #555555;
+            text-align: center;
+            background-color: #eeeeee;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            margin-top: 4px;
+        }
+        .text-align-center {
+            text-align: -webkit-center;
+        }
+        .user svg .front {
+            fill: #1b5b93
+        }
+        .f-right {
+            float:right;
+        }
+        .centralizing{
+            margin:0 auto;
+            position: relative;
+            width:max-content;
+        }
+        .navbar-light{
+            color: #fff!important;
+            background-color: #FFF;
+        }
+            .navbar-light .navbar-nav > li > a:hover, .navbar-inverse .navbar-nav > li > a:focus {
+                color: #000000;
+                background-color: transparent;
+            }
+        .navbar-light .navbar-nav > li > a {
+            color: #9d9d9d;
+        }
+
+        body {
+            font-family:Arial;
+            background-image:url(/Content/img/background.jpg)
+        }
+        .body-content{
+            min-height:100vh;
+            height:auto;
+            padding-top:40px;
+            
+        }
+        .shadow-b {
+            box-shadow: 0px 0px 16px 0px rgb(0 0 0 /50%);
+        }
+        .shadow-m {
+            box-shadow: 0 3px 4px rgba(0, 0, 0, 0.2);
+        }
+        .logo {
+            float: left;
+            height: 60px;
+            padding: 8px 5px;
+            font-size: 18px;
+            line-height: 20px;
+        }
+        .logo img{
+            height:100%;
+            width:auto;
+        }
+        .size-image img {
+            height: 100%;
+            width: auto;
+        }
+
+    </style>
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar navbar-light navbar-fixed-top shadow-b">
         <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                @Html.ActionLink("Nome do aplicativo", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            <div class="row">
+                <div class="navbar-header ">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <div class="logo navbar-brand ">
+                        <img src="~/Content/img/fblogo.gif" class="img-responsive" />
+                    </div>
+                  
+
+
+                </div>
+                <div class="navbar-collapse collapse ">
+                    <div class="centralizing">
+                        <ul class="nav navbar-nav ">
+                            <li>@Html.ActionLink("Início", "Index", "Home")</li>
+                            <li>@Html.ActionLink("Clientes", "Clientes", "Home")</li>
+                            <li>@Html.ActionLink("Contato", "Index", "Home")</li>
+                        </ul>
+                    </div>
+                   
+
+                    <div class="user f-right navbar-header">
+                        
+                        <div class="personiddon">
+                            <svg class="bi" width="35" height="35" fill="currentColor"><use class="front" xlink:href="~/Content/bi.svg#person-fill"></use></svg>
+                        </div>
+                                                                  
+                       
+
+                    </div>
+                </div>
+                
+
+
+
             </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Início", "Index", "Home")</li>
-                    <li>@Html.ActionLink("Sobre", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contato", "Contact", "Home")</li>
-                </ul>
-            </div>
+            
         </div>
     </div>
-    <div class="container body-content">
+    <div class="container body-content shadow-b" style="background-color:#FFFFFF;">
         @RenderBody()
         <hr />
         <footer>
