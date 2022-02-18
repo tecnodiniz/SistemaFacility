@@ -1,0 +1,5 @@
+  TaxaJuros decimal(18,4),
+    DataBoleto datetime,
+    ValorBoleto decimal(18,4),
+    DataEnvio datetime,
+    UltimoEndosso varchar(255),

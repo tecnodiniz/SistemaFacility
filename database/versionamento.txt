@@ -1,0 +1,4 @@
+versionamento de software
+
+v1.2 para v1.3: pode indicar uma alteração importante na estrutura do software, como a inclusão e/ou exclusão de ferramentas;
+v1.01 para v1.02: pode representar uma pequena correção de bugs (falhas operacionais).

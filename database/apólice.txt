@@ -1,0 +1,27 @@
+*Cliente
+*Seguradora
+
+data em que foi fechada
+data em que foi protocolada
+data em que foi emitida
+data em que físico foi recebido
+
+
+
+Uma apólice será:
+
+Emitida
+Não Emitida
+Recebida
+Não recebida
+Recusada
+
+*Ramos
+
+Início e término de vigência
+Calculo - Data
+CI
+Cia Anterior
+Apólice anterior
+Valor em risco
+

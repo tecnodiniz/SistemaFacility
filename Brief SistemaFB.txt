@@ -1,0 +1,20 @@
+BRIEF do projeto
+
+Cadastro de Usuario da corretora (Produtor)
+
+Cadastro de Cliente
+        
+Cadastro de Seguradora
+
+Inclusão / Exclusão de Apólices (Por cliente )
+
+Ter um controle de Boletos, Endosso e Sinistros (Por Apólices)
+                            
+Histórico das ações realizadas pelo produtor(Cadastro realizado, alteração, exclusão, inclusão e exclusão de apólice, horario de login.)
+
+Histórico do Segurado com a corretora
+
+Classificação por Ramos e Modalidade(Apólices)
+
+
+
