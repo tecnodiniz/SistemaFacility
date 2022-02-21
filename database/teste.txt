@@ -1,2 +1,0 @@
-Testando se a branch adicionada deu certo. Criei um arquivo de text usando copy NUL nome.txt e depois copy CON para editar
-
