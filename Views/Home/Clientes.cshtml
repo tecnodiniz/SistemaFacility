@@ -7,30 +7,26 @@
 
 <table class="table table-hover">
     <tr>
-        <th scope="col">#</th>
+        <th scope="col">Cod</th>
         <th scope="col">Segurado</th>
-        <th scope="col">CNPJ/CPF</th>       
-        <th scope="col">Endereco</th>
-        <th scope="col">CEP</th>
-        <th scope="col">UF</th>
-        <th scope="col">Cidade</th>
-        <th scope="col">Bairro</th>
+        <th scope="col">CNPJ</th>
+     
+        <th scope="col">Celular</th>
+        <th scope="col">Apolices</th>
+
+
     </tr>
 
     @{ foreach (var item in ViewBag.lista)
         {
         <tr>
             <td>@item.Id</td>
-            <td>@item.Nome</td>
+            <td>@item.Segurado</td>
             <td>@item.CNPJ</td>
+            <td>@item.Celular</td>
             
-            <td>@item.Endereco</td>
-           
-        
-            <td>@item.CEP</td>
-            <td>@item.UF</td>
-            <td>@item.Cidade</td>
-            <td>@item.Bairro</td>
+            <td>@item.Apolices</td>
+
         </tr>        
             }
 

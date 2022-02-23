@@ -16,7 +16,7 @@ namespace SistemaFB.Controllers
             {
                 ViewBag.Erro = Session["Erro"].ToString();
             }
-              
+            ViewBag.Version = "Version 0.0.0"; 
             return View();
         }
 

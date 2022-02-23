@@ -11,21 +11,22 @@ namespace SistemaFB.Controllers
     {
         public ActionResult Index()
         {
-             if (Session["Autorizado"] != null)
-             {
-                 ViewBag.Usuario = "Admin";
-                 ViewBag.Nome = Session["Usuario"].ToString();
-                return View();
+            /*if (Session["Autorizado"] != null)
+            {
+                ViewBag.Usuario = "Admin";
+                ViewBag.Nome = Session["Usuario"].ToString();
+               return View();
 
-             }
-             else
-             {
-                 //Response.Redirect("/Login/Index");
-                 //return null;
-                 return RedirectToAction("Index", "Login");
-             }
-           
-            
+            }
+            else
+            {
+                //Response.Redirect("/Login/Index");
+                //return null;
+                return RedirectToAction("Index", "Login");
+            }*/
+            return View();
+
+
         }
 
         public ActionResult About()
@@ -39,7 +40,7 @@ namespace SistemaFB.Controllers
         {
             ViewBag.Message = "Your Client page.";
 
-            var lista = Contatos.GetClientes();
+            var lista = Cliente.GetClientes();
             ViewBag.lista = lista;
 
             return View();

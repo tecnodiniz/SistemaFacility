@@ -22,6 +22,7 @@ namespace SistemaFB.Models
         public string UF { get; set; }
         public string Cidade { get; set; }
         public string Bairro { get; set; }
+   
 
         public Contatos() { }
 
@@ -39,13 +40,15 @@ namespace SistemaFB.Models
             UF = uf;
             Cidade = cidade;
             Bairro = bairro;
+   
+               
         }
 
         public static List<Contatos> GetClientes()
         {
 
             var listaContatos= new List<Contatos>();
-            var sql = "SELECT TOP 10 * FROM Clientes ORDER BY CNPJ DESC";
+            var sql = "SELECT TOP 100 * FROM Clientes";
             try
             {
                 using (var cn = new SqlConnection(_conn)) {
