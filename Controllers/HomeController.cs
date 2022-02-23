@@ -45,5 +45,11 @@ namespace SistemaFB.Controllers
 
             return View();
         }
+        [HttpPost]
+        public void PesquisarCliente()
+        {
+            var cliente = new Cliente();
+            cliente.Segurado = Request["procurar"];
+        }
     }
 }

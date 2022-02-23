@@ -70,6 +70,53 @@ namespace SistemaFB.Models
         }
 
 
+
+        public static List<Cliente> GetPesquisarCliente(object segurado)
+        {
+            var result = false;
+
+            var sql = "SELECT TOP 10 p.ClienteId As Cod,c.nome,c.CNPJ, t.Celular ,COUNT(p.ClienteId) AS qtdPropostas " +
+                "FROM Clientes c " +
+                "INNER JOIN Propostas p ON c.id = p.ClienteId " +
+                "INNER JOIN Telefones t ON t.ClienteId = c.id  " +
+                "GROUP by c.nome, p.ClienteId, c.CNPJ, t.Celular WHERE c.nome = '" + segurado + "'";
+
+/*Parei aqui*/
+            try
+            {
+                using (var cn = new SqlConnection(_conn))
+                {
+                    cn.Open();
+                    using (var cmd = new SqlCommand(sql, cn))
+                    {
+                        using (var dr = cmd.ExecuteReader())
+                        {
+                            if (dr.HasRows)
+                            {
+                            
+                                while (dr.Read())
+                                {
+                                    listaClientes.Add(new Cliente(
+                                        Convert.ToInt32(dr["Cod"]),
+                                        dr["nome"].ToString(),
+                                        dr["CNPJ"].ToString(),
+                                        dr["Celular"].ToString(),
+                                        Convert.ToInt32(dr["qtdPropostas"])
+                                        ));
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Falha", ex.Message);
+
+            }
+            return result;
+        }
+
     }
     
 
