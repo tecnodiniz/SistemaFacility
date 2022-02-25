@@ -1,76 +1,139 @@
-﻿@{
-    ViewBag.Title = "Clientes";
-    
-}
+﻿@Scripts.Render("~/bundles/jquery")
+@Scripts.Render("~/bundles/jqueryval")
 
+<style type="text/css">
 
-<table class="table table-hover">
-    <div class="table-header">
-        <strong class="col-md-9">Consulta de Clientes</strong>
-        <form action="/Home/PesquisarCliente" method="post">
-            <div class="input-group" style="margin-bottom:20px;">
-                <span class="input-group-addon" id="sizing-addon2"><a href="#"><svg class="bi" width="15" height="15" fill="currentColor"><use xlink:href="~/Content/bi.svg#search"></use></svg></a></span>
-                <input type="text" class="form-control" id="login" name="login" placeholder="Pesquisar" aria-describedby="sizing-addon2">
-            </div>
-
-        </form>
-
-    </div>
-    <tr>
-        <th scope="col">Cod</th>
-        <th scope="col">Segurado</th>
-        <th scope="col">CNPJ</th>
-
-        <th scope="col">Celular</th>
-        <th scope="col">Apolices</th>
-
-
-    </tr>
-
-
-    @{ foreach (var item in ViewBag.lista)
-        {
-        <tr>
-            <td><strong>@item.Id</strong> </td>
-            <td><a>@item.Segurado</a></td>
-            <td><strong>@item.CNPJ</strong></td>
-            <td><strong>@item.Celular</strong> </td>
-            <td><strong>@item.Apolices</strong> </td>
-           
-        </tr>
-
-        }
+    .progresso {
+        display: none;
+        position: fixed;
+        top: 360px;
+        left: 50%;
+        margin-top: -50px;
+        margin-left: -100px;
+        vertical-align: middle;
+        text-align: center;
+        font-size: 16px;
+        font-weight: bold;
+        background-color: white;
+        border: 1px solid black;
+        height: 90px;
+        width: 120px;
+    }
+    .btn-group{
+       
+    display: inline-block;
+    margin-bottom: 0;
+    font-weight: normal;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    background-image: none;
+    border: 1px solid transparent;
+    /* padding: 6px 12px; */
+    font-size: 14px;
+    /* line-height: 1.42857143; */
+    border-radius: 4px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 
     }
-</table>
-<div class="col-md-12">
-    <center>
-        <nav aria-label="Page navigation centralizing">
-            <ul class="pagination">
-                <li>
-                    <a href="#" aria-label="Previous">
-                        <span aria-hidden="true">&laquo;</span>
-                    </a>
-                </li>
-                <li><a href="#">1</a></li>
-                <li><a href="#">2</a></li>
-                <li><a href="#">3</a></li>
-                <li><a href="#">4</a></li>
-                <li><a href="#">5</a></li>
-                <li>
-                    <a href="#" aria-label="Next">
-                        <span aria-hidden="true">&raquo;</span>
-                    </a>
-                </li>
-            </ul>
-        </nav>
-    </center>
-   
+    .m-r-20{
+        margin-right:20px;
+    }
+</style>
+
+<div class="table-header">
+    <strong class="col-md-6">Consulta de Clientes</strong>
+
+    <div class="form-group m-r-20">
+        <!--		Show Numbers Of Rows 		-->
+        <select class="form-control" name="state" id="maxRows">
+            <option value="5000">Show ALL Rows</option>
+            <option value="5">5</option>
+            <option value="10">10</option>
+            <option value="15">15</option>
+            <option value="20">20</option>
+            <option value="50">50</option>
+            <option value="70">70</option>
+            <option value="100">100</option>
+        </select>
+
+
+
+    </div>
+
+
+
+    @using (Ajax.BeginForm(
+"GetCliente",
+"Procurar",
+new AjaxOptions
+{
+    UpdateTargetId = "divResultadoConsulta",
+    LoadingElementId = "divCarregando"
+}
+))
+    {
+        <div class="input-group" style="margin-bottom:20px;">
+            <span class="input-group-addon" id="sizing-addon2"><input type="submit" class="btn-group" value="Pesqusiar" /></span>
+            <input type="text" class="form-control" id="nome" name="nome" placeholder="" aria-describedby="sizing-addon2">
+        </div>
+    }
+
+
+
+
+
+
+
+
+
+</div>
+<div id="divResultadoConsulta" class="">
+</div>
+
+<div id="divCarregando" class="progresso">
+    <img src="@Url.Content("~/Content/carregando.gif")" />
+    <br />
+    Carregando...
 </div>
 
 
 
+
+@*<div class="col-md-12">
+        <center>
+            <nav aria-label="Page navigation centralizing">
+                <ul class="pagination">
+                    <li>
+                        <a href="#" aria-label="Previous">
+                            <span aria-hidden="true">&laquo;</span>
+                        </a>
+                    </li>
+                    <li><a href="#">1</a></li>
+                    <li><a href="#">2</a></li>
+                    <li><a href="#">3</a></li>
+                    <li><a href="#">4</a></li>
+                    <li><a href="#">5</a></li>
+                    <li>
+                        <a href="#" aria-label="Next">
+                            <span aria-hidden="true">&raquo;</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </center>
+
+    </div>*@
+
+
+
 <address>
-    <strong>Support:</strong>   <a href="mailto:Support@example.com">Support@example.com</a><br />
-    <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
+    <strong>Support:</strong>   <a href="mailto:ti@facilitybond.com.br">ti@facilitybond.com.br</a><br />
+    <strong>Ramal:</strong> 4418-8336
 </address>

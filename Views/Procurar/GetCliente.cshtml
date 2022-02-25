@@ -1,0 +1,136 @@
+﻿@model IEnumerable<SistemaFB.Models.Cliente>
+<style>
+    .pagination-container ul li{
+        cursor:pointer;
+    }
+
+    .table-header {
+        height: 50px;
+        background-color: #35478C;
+        color: #fff;
+        padding: 10px;
+        display: flex;
+        border-radius: 8px 8px 0 0;
+    }
+
+        .table-header span a {
+            text-decoration: none;
+            color: #333;
+        }
+
+        .table-header strong {
+            font-size: 20px;
+        }
+
+    .table > tbody > tr, th {
+        text-align: center;
+    }
+
+        .table > tbody > tr > td {
+            padding: 8px;
+            font-size: 12px;
+            white-space: nowrap;
+        }
+
+            .table > tbody > tr > td a {
+                text-transform: uppercase;
+                cursor: pointer;
+            }
+
+        .table > tbody > tr > th {
+            color: #0d65d9;
+            background-color: #f5f5f5;
+        }
+
+    .table-hover > tbody > tr:hover {
+        background-color: #D0E9F2;
+    }
+</style>
+
+<div class="container">
+  
+
+    <table class="table table-hover" id="table-id">
+
+
+
+        <tr>
+            <th>
+
+                @Html.DisplayNameFor(model => model.Segurado)
+
+
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CNPJ)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Celular)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Apolices)
+            </th>
+            <th></th>
+        </tr>
+
+        <tbody>
+            @foreach (var item in Model)
+            {
+
+                <tr>
+                    <td>
+                        <a>
+                            @Html.DisplayFor(modelItem => item.Segurado)
+                        </a>
+
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CNPJ)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Celular)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Apolices)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                        @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+                        @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+                    </td>
+                </tr>
+
+            }
+        </tbody>
+
+
+
+    </table>
+
+    <center>
+        <div class='pagination-container centralizing'>
+            <nav>
+                <ul class="pagination">
+
+                    <li data-page="prev">
+                        <span> < <span class="sr-only">(current)</span></span>
+                    </li>
+                    <!--	Here the JS Function Will Add the Rows -->
+                    <li data-page="next" id="prev">
+                        <span> > <span class="sr-only">(current)</span></span>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </center>
+  
+
+</div>
+
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js'></script>
+<script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js'></script>
+<script src="~/Scripts/script.js"></script>
+
+
+
+

@@ -40,16 +40,15 @@ namespace SistemaFB.Controllers
         {
             ViewBag.Message = "Your Client page.";
 
-            var lista = Cliente.GetClientes();
+          var lista = Cliente.GetClientes();
             ViewBag.lista = lista;
 
             return View();
         }
-        [HttpPost]
-        public void PesquisarCliente()
+        public ActionResult Teste()
         {
-            var cliente = new Cliente();
-            cliente.Segurado = Request["procurar"];
+            return View();
         }
+       
     }
 }

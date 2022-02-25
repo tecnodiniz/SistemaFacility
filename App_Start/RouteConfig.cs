@@ -23,6 +23,11 @@ namespace SistemaFB
                "Home/Clientes",
                new { Controller = "Home", Action = "Clientes" }
                );
+            routes.MapRoute(
+              "Teste",
+              "Home/Teste",
+              new { Controller = "Home", Action = "Teste" }
+              );
 
             routes.MapRoute(
                 name: "Default",
