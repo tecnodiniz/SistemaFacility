@@ -1,0 +1,252 @@
+﻿/*   Body   */
+body {
+    font-family: Arial;
+    background-image: url(/Content/img/background.jpg)
+}
+
+.body-content {
+    min-height: 100vh;
+    height: auto;
+    padding-top: 40px;
+    margin-top: 11px;
+}
+/*   Construção navbar   */
+
+/*   Main Navbar - Definindo cores e estilo da fonte   */
+.navbar-light {
+    color: #fff !important;
+    background-color: #dfdfdf;
+}
+
+    .navbar-light .navbar-nav > li > a:hover, .navbar-inverse .navbar-nav > li > a:focus {
+        color: #000000;
+        background-color: transparent;
+    }
+
+    .navbar-light .navbar-nav > li > a {
+        color: #9d9d9d;
+    }
+/*    Sombreando o menu    */
+.shadow-b {
+    box-shadow: 0px 0px 16px 0px rgb(0 0 0 /50%);
+}
+
+.shadow-m {
+    box-shadow: 0 3px 4px rgba(0, 0, 0, 0.2);
+}
+/*   Logo da Facility   */
+.logo {
+    float: left;
+    height: 60px;
+    padding: 8px 5px;
+    font-size: 18px;
+    line-height: 20px;
+}
+
+    .logo img {
+        height: 100%;
+        width: auto;
+    }
+
+.size-image img {
+    height: 100%;
+    width: auto;
+}
+
+/*   Imagem perfil usuario   */
+.user {
+    cursor: pointer;
+}
+
+.personiddon {
+    padding: 4px;
+}
+
+.user svg .front {
+    fill: #1b5b93
+}
+/*   Fim do navbar    */
+
+/*   Atributos avulsos   */
+.f-right {
+    float: right;
+}
+
+.m-r-20 {
+    margin-right: 20px;
+}
+
+.text-align-center {
+    text-align: -webkit-center;
+}
+/*   Centralizando elementos   */
+.centralizing {
+    margin: 0 auto;
+    position: relative;
+    width: max-content;
+}
+/*   Fim dos avulsos   */
+
+/*   Tabela da View Procurar/GetCliente   */
+
+/*   Cabeçalho para fazer parte da tabela   */
+.table-header {
+    height: 50px;
+    background-color: #35478C;
+    color: #fff;
+    padding: 10px;
+    display: flex;
+    border-radius: 8px 8px 0 0;
+}
+
+/*    botao de pesquisar    */
+.btn-group {
+    display: inline-block;
+    margin-bottom: 0;
+    font-weight: normal;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    background-image: none;
+    border: 1px solid transparent;
+    /* padding: 6px 12px; */
+    font-size: 14px;
+    /* line-height: 1.42857143; */
+    border-radius: 4px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+/*    Animação de carregamento de dados    */
+.progresso {
+    display: none;
+    position: fixed;
+    top: 360px;
+    left: 50%;
+    margin-top: -50px;
+    margin-left: -100px;
+    vertical-align: middle;
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: white;
+    border: 1px solid black;
+    height: 90px;
+    width: 120px;
+}
+
+.table-header span a {
+    text-decoration: none;
+    color: #333;
+}
+
+.table-header strong {
+    font-size: 20px;
+}
+
+/*   formatação da tabela   */
+.table > tbody > tr, th {
+    text-align: center;
+}
+
+    .table > tbody > tr > td {
+        padding: 8px;
+        font-size: 12px;
+        white-space: nowrap;
+    }
+
+        .table > tbody > tr > td a {
+            text-transform: uppercase;
+            cursor: pointer;
+        }
+
+    .table > tbody > tr > th {
+        color: #0d65d9;
+        background-color: #f5f5f5;
+    }
+
+.table-hover > tbody > tr:hover {
+    background-color: #D0E9F2;
+}
+
+.pagination-container ul li {
+    cursor: pointer;
+}
+/*   Fim da tabela   */
+
+/*    Form do Cliente no Segurado/Segurado*/
+.label-side label {
+    position: relative;
+    left: 0;
+    margin-bottom: 15px;
+    vertical-align: sub;
+}
+
+.label-side {
+    padding-left: 0;
+}
+
+.second-label {
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.input-side {
+    padding-left: 0px;
+}
+
+    .input-side .items {
+        display: flex;
+        flex-wrap: nowrap;
+        flex-direction: row-reverse;
+        align-items: center;
+    }
+
+        .input-side .items label {
+            margin-right: 4px;
+        }
+
+        .input-side .items input {
+            max-width: 100%;
+        }
+
+    .input-side input, .input-side .input-group input {
+        margin-bottom: 3px;
+    }
+
+.flex-auto {
+    flex: auto;
+}
+
+.input-group label {
+    margin-right: 10px;
+    margin-top: 5px;
+    font-weight: 100;
+}
+
+.input-label-side-left label {
+    margin-bottom: 15px;
+}
+
+.input-label-side-left {
+    padding-top: 10px;
+}
+
+.input-group div {
+    width: 100px;
+}
+
+#name {
+    max-width: 100%;
+    text-transform: uppercase;
+}
+/*   Fim da form Segurado*/
+/*   Footer   */
+footer {
+    position: absolute;
+    bottom: 0;
+}

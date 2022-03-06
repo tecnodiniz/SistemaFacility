@@ -30,6 +30,12 @@ namespace SistemaFB
               );
 
             routes.MapRoute(
+              "Segurado",
+              "Segurado/Segurado:id",
+              new { Controller = "Segurado", Action = "Segurado", id = 0}
+              );
+
+            routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Login", action = "Index", id = UrlParameter.Optional }

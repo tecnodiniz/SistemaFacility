@@ -12,7 +12,7 @@ getPagination('#table-id');
 		 
 
 function getPagination(table) {
-  var lastPage = 1;
+  var lastPage = 0;
 
   $('#maxRows')
     .on('change', function(evt) {
@@ -31,6 +31,7 @@ function getPagination(table) {
       } else {
         $('.pagination').show();
       }
+
 
       var totalRows = $(table + ' tbody tr').length; // numbers of rows
       $(table + ' tr:gt(0)').each(function() {
@@ -136,9 +137,9 @@ function limitPagging(){
 	}
 }
 
-$(function() {
+/*$(function() {
   // Just to append id number for each row
-  $('table tr:eq(0)').prepend('<th> ID </th>');
+  $('table tr:eq(0)').prepend('<th> Linhas </th>');
 
   var id = 0;
 
@@ -149,4 +150,4 @@ $(function() {
 });
 
 //  Developed By Yasser Mas
-// yasser.mas2@gmail.com
+// yasser.mas2@gmail.com*/

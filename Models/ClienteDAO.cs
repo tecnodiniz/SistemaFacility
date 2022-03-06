@@ -20,7 +20,7 @@ namespace SistemaFB.Models
                     nome.Trim().ToUpper() :
                     String.Empty) + "%";
 
-            var sql = "SELECT p.ClienteId As Cod,c.nome,c.CNPJ,   t.Celular ,COUNT(p.ClienteId) AS qtdPropostas FROM Clientes c INNER JOIN Propostas p ON c.id = p.ClienteId INNER JOIN Telefones t ON t.ClienteId = c.id WHERE c.nome LIKE @SEGURADO GROUP by c.nome, p.ClienteId, c.CNPJ, t.Celular";
+            var sql = "SELECT p.ClienteId As Cod,c.nome,c.CNPJ,   t.Celular ,COUNT(p.ClienteId) AS qtdPropostas FROM Clientes c INNER JOIN Propostas p ON c.id = p.ClienteId LEFT JOIN Telefones t ON t.ClienteId = c.id WHERE c.nome LIKE @SEGURADO GROUP by c.nome, p.ClienteId, c.CNPJ, t.Celular";
 
             
             try

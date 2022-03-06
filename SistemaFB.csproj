@@ -123,6 +123,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\ProcurarController.cs" />
+    <Compile Include="Controllers\SeguradoController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -143,6 +144,7 @@
     <Content Include="Content\img\EpData-un-excelente-recurso-que-te-permite-buscar-graficos.jpg" />
     <Content Include="Content\img\fblogo.png" />
     <Content Include="Content\img\person-default.jpg" />
+    <Content Include="Content\main.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -180,6 +182,7 @@
     <Content Include="Views\Login\Index.cshtml" />
     <Content Include="Views\Procurar\GetCliente.cshtml" />
     <Content Include="Views\Home\Teste.cshtml" />
+    <Content Include="Views\Segurado\Segurado.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

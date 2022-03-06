@@ -1,0 +1,79 @@
+﻿@{
+    var segurado = ViewBag.Segurado;
+}
+<div class="table-header">
+    <strong class="col-md-6">Informações do Cliente</strong>
+</div>
+<div style="margin-top:20px;" class="col-md-12">
+    <div class="col-md-1 label-side">
+        <label for="name">Cliente</label>
+        <label for="celular">Email</label>
+        <label for="celular">Telefone</label>
+        <label for="celular">Endereco</label>
+        <label for="celular">UF</label>
+    </div>
+    <div class="col-md-6 input-side">
+        <input class="form-control" type="text" name="name" id="name" value="@segurado.Nome" disabled />
+        <div class="items">
+            <input class="form-control" style=" width: 459px;" type="email" name="email" id="email" value="@segurado.Email" disabled />
+            <div class="flex-auto">
+                <label>Pessoal</label>
+            </div>
+        </div>
+        <div class="items">
+            <input class="form-control" type="tel" name="tel" id="tel" value="" disabled />
+            <label style="margin-left:5px;margin-right:5px;">Comercial</label>
+            <input class="form-control" type="tel" name="tel" id="tel" value="" disabled />
+            <div class="flex-auto">
+                <label>Residencial</label>
+            </div>
+        </div>
+        <div class="items">
+            <input class="form-control" style="width:50px;" type="tel" name="tel" id="tel" value="" disabled />
+            <label class="second-label">N°</label>
+            <input class="form-control" type="tel" name="tel" id="tel" value="@segurado.Endereco" disabled />
+        </div>
+        <div class="items">
+            <input class="form-control" type="text" name="comple" id="comple" value="@segurado.Cidade" disabled />
+            <label class="second-label">Cidade</label>
+            <input class="form-control" type="text" style="width:50px;" name="comple" id="comple" value="@segurado.UF" disabled />
+        </div>
+    </div>
+    <div class="col-md-1 label-side">
+        <label for="name">CNPJ</label>
+        <label for="celular">Comercial</label>
+        <label for="celular">Celular</label>
+        <label for="celular">Complemento</label>
+        <label for="celular">Bairro</label>
+    </div>
+    <div class="col-md-4 input-side">
+        <div class="items">
+            <input class="form-control" style="width:95px;" type="text" name="" id="" value="@DateTime.Today.Day / @DateTime.Today.Month / @DateTime.Today.Year" disabled />
+            <label class="second-label">Fundação</label>
+            <input class="form-control" type="text" name="" id="" value="@segurado.CNPJ" disabled />
+        </div>
+        <div class="items">
+            <input class="form-control" type="email" name="email" id="email" value="@segurado.Email" disabled />
+            <div class="flex-auto">
+            </div>
+        </div>
+        <div class="items">
+            <input class="form-control" type="tel" name="cel" id="cel" value="" disabled />
+        </div>
+        <div class="items">
+            <input class="form-control" style="width:95px;" type="text" name="comple" id="comple" value="@segurado.CEP" disabled />
+            <label class="second-label">CEP</label>
+            <input class="form-control" type="text" name="comple" id="comple" value="@segurado.Complemento" disabled />
+        </div>
+        <div class="items">
+            <input class="form-control" type="text" name="comple" id="comple" value="@segurado.Bairro" disabled />
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
