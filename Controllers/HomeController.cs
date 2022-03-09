@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using SistemaFB.Main;
 using SistemaFB.Models;
 
 namespace SistemaFB.Controllers
@@ -40,13 +41,17 @@ namespace SistemaFB.Controllers
         {
             ViewBag.Message = "Your Client page.";
 
-          var lista = Cliente.GetClientes();
-            ViewBag.lista = lista;
 
             return View();
         }
-        public ActionResult Teste()
+        public ActionResult Teste(int id)
         {
+            var contato = new ContatosDAO();
+            contato.GetSegurado(id);
+            List<Apolice> resultado = new ApoliceDAO().GetApolice(id);
+            ViewBag.Apolice = resultado;
+            ViewBag.Contato = contato;
+            
             return View();
         }
        

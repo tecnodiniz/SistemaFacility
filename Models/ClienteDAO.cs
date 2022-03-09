@@ -8,12 +8,12 @@ using System.Web.Configuration;
 
 namespace SistemaFB.Models
 {
-    public class ClienteDAO
+    public class ClienteDAO : Contatos
     {
         private readonly static string _conn = WebConfigurationManager.ConnectionStrings["conn"].ConnectionString;
-        public List<Cliente> GetCliente(string nome)
+        public List<Contatos> GetCliente(string nome)
         {
-            List<Cliente> resultado = new List<Cliente>();
+            List<Contatos> resultado = new List<Contatos>();
 
             string valorPesquisa = "%" +
                   (!String.IsNullOrWhiteSpace(nome) ?
@@ -39,7 +39,7 @@ namespace SistemaFB.Models
 
                                 while (dr.Read())
                                 {
-                                    resultado.Add(new Cliente(
+                                    resultado.Add(new Contatos(
                                         Convert.ToInt32(dr["Cod"]),
                                         dr["nome"].ToString(),
                                         dr["CNPJ"].ToString(),
@@ -62,5 +62,7 @@ namespace SistemaFB.Models
             }
             return resultado;
         }
+
+        
     }
 }

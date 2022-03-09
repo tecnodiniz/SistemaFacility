@@ -12,7 +12,7 @@ namespace SistemaFB.Controllers
         // GET: Procurar
          public PartialViewResult GetCliente(string nome)
         {
-            List<Cliente> informacaoPesquisa = new ClienteDAO().GetCliente(nome);
+            List<Contatos> informacaoPesquisa = new ClienteDAO().GetCliente(nome);
 
             return PartialView(informacaoPesquisa);
            

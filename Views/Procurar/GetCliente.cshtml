@@ -1,4 +1,4 @@
-﻿@model IEnumerable<SistemaFB.Models.Cliente>
+﻿@model IEnumerable<SistemaFB.Models.Contatos>
 
 <!--   Partial View para carregar os dados do cliente na Home/Clientes   -->
 <table class="table table-hover" id="table-id">
@@ -7,7 +7,7 @@
             Cod
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Segurado)
+            @Html.DisplayNameFor(model => model.Nome)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.CNPJ)
@@ -24,21 +24,21 @@
         {
             <tr>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Id)
+                    @Html.DisplayFor(modelItem => item.v1)
                 </td>
                 <td>
-                    <a href="/Segurado/Segurado/@item.Id">
-                        @Html.DisplayFor(modelItem => item.Segurado)
+                    <a href="/Segurado/Contato/@item.v1">
+                        @Html.DisplayFor(modelItem => item.v2)
                     </a>
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.CNPJ)
+                    @Html.DisplayFor(modelItem => item.v3)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Celular)
+                    @Html.DisplayFor(modelItem => item.v4)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Apolices)
+                    @Html.DisplayFor(modelItem => item.v5)
                 </td>
             </tr>
         }

@@ -127,9 +127,12 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\Cliente.cs" />
+    <Compile Include="Main\Apolice.cs" />
+    <Compile Include="Main\Telefones.cs" />
+    <Compile Include="Models\ApoliceDAO.cs" />
     <Compile Include="Models\ClienteDAO.cs" />
-    <Compile Include="Models\Contatos.cs" />
+    <Compile Include="Models\ContatosDAO.cs" />
+    <Compile Include="Main\Contatos.cs" />
     <Compile Include="Models\Usuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -182,7 +185,7 @@
     <Content Include="Views\Login\Index.cshtml" />
     <Content Include="Views\Procurar\GetCliente.cshtml" />
     <Content Include="Views\Home\Teste.cshtml" />
-    <Content Include="Views\Segurado\Segurado.cshtml" />
+    <Content Include="Views\Segurado\Contato.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

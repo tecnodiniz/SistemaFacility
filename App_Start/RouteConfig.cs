@@ -25,14 +25,14 @@ namespace SistemaFB
                );
             routes.MapRoute(
               "Teste",
-              "Home/Teste",
-              new { Controller = "Home", Action = "Teste" }
+              "Home/Teste:id",
+              new { Controller = "Home", Action = "Teste", id = 1340}
               );
 
             routes.MapRoute(
               "Segurado",
-              "Segurado/Segurado:id",
-              new { Controller = "Segurado", Action = "Segurado", id = 0}
+              "Segurado/Contato:id",
+              new { Controller = "Segurado", Action = "Contato", id = 0}
               );
 
             routes.MapRoute(

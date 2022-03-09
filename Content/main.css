@@ -75,6 +75,11 @@ body {
 .m-r-20 {
     margin-right: 20px;
 }
+p.truncate-3l{
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
 
 .text-align-center {
     text-align: -webkit-center;
@@ -245,8 +250,4 @@ body {
     text-transform: uppercase;
 }
 /*   Fim da form Segurado*/
-/*   Footer   */
-footer {
-    position: absolute;
-    bottom: 0;
-}
+
