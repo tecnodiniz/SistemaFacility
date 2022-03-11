@@ -144,6 +144,7 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\carregando.gif" />
     <Content Include="Content\img\background.jpg" />
+    <Content Include="Content\img\bg-blue.jpg" />
     <Content Include="Content\img\EpData-un-excelente-recurso-que-te-permite-buscar-graficos.jpg" />
     <Content Include="Content\img\fblogo.png" />
     <Content Include="Content\img\person-default.jpg" />

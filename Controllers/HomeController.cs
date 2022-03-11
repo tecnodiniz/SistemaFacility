@@ -12,13 +12,14 @@ namespace SistemaFB.Controllers
     {
         public ActionResult Index()
         {
-            /*if (Session["Autorizado"] != null)
+            if (Session["Autorizado"] != null)
             {
-                ViewBag.Usuario = "Admin";
-                ViewBag.Nome = Session["Usuario"].ToString();
-               return View();
+               
+                ViewBag.Usuario = Session["Usuario"].ToString();
+                return View();
 
             }
+            /*
             else
             {
                 //Response.Redirect("/Login/Index");
@@ -44,13 +45,9 @@ namespace SistemaFB.Controllers
 
             return View();
         }
-        public ActionResult Teste(int id)
+        public ActionResult Teste()
         {
-            var contato = new ContatosDAO();
-            contato.GetSegurado(id);
-            List<Apolice> resultado = new ApoliceDAO().GetApolice(id);
-            ViewBag.Apolice = resultado;
-            ViewBag.Contato = contato;
+         
             
             return View();
         }

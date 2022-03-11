@@ -29,14 +29,19 @@
             width: 300px;
             min-height: 300px;
             height:auto;
-            background: #fff;
+            background: #dfdfdf;
             border-radius:8px;
             border:solid 1px #adb5bd  ;
         }
-        
+        .box-header{
+            width:100%;
+            background-color:#dfdfdf;
+        }
         .box-content {
             padding: 30px;
             text-align: center;
+            background-color: #15155e;
+            border-radius: 8px 8px 0px 0px;
         }
         .shadow-m {
             box-shadow: 0 3px 4px rgba(0, 0, 0, 0.2);
@@ -50,7 +55,7 @@
             color: red;
         }
         body {
-            background-image:url(/Content/img/background.jpg)
+            background-image:url(/Content/img/bg-blue.jpg)
         }
         .version{
             font-size:10px;
@@ -70,11 +75,11 @@
           
             <div class="box-content">
 
-
                 <div class="logo" style="margin-bottom:20px;">
                     <img class="img-responsive" src="~/Content/img/fblogo.gif" />
-                   
-</div>
+
+                </div>
+
 
                 <form class="g-3" action="/Login/ChecarLogin" method="post">
                     <span>@ViewBag.Erro</span>
@@ -85,7 +90,7 @@
 
                         <input type="text" class="form-control" id="login" name="login" placeholder="Usuário" aria-describedby="sizing-addon2">
                     </div>
-                   
+
 
                     <div class="input-group" style="margin-top:5px;">
                         <span class="input-group-addon" id="sizing-addon2"><svg class="bi" width="15" height="15" fill="currentColor"><use xlink:href="~/Content/bi.svg#lock"></use></svg></span>
@@ -95,7 +100,7 @@
                     <div class="col-auto ">
                         <button type="submit" style="margin-top:10px; width:100%;" class="btn btn-primary mb-3">Confirmar</button>
                     </div>
-                    <p style="margin-top:10px;">Não é registrado? <span><a href="#">Crie uma conta</a></span></p>
+                    <p style="margin-top: 10px; color: #dfdfdf;">Não é registrado? <span><a href="#">Crie uma conta</a></span></p>
                 </form>
 
 
@@ -104,7 +109,7 @@
                 <span class="version">
                     @ViewBag.Version
                 </span>
-                
+
             </div>
 
 

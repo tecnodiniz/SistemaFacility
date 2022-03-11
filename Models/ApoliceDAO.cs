@@ -39,6 +39,7 @@ namespace SistemaFB.Models
                             {
                                 while (dr.Read())
                                 {
+                                 
                                     resultado.Add(new Apolice(
                                         dr["Apolice"].ToString(),
                                         dr["Nome"].ToString(),
