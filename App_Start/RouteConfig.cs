@@ -18,6 +18,8 @@ namespace SistemaFB
                 "Login/",
                 new { Controller = "Login", Action = "Index"}
                 );
+        
+
             routes.MapRoute(
                "Clientes",
                "Home/Clientes",
@@ -34,6 +36,12 @@ namespace SistemaFB
               "Segurado/Contato:id",
               new { Controller = "Segurado", Action = "Contato", id = 0}
               );
+
+            routes.MapRoute(
+          "Apolice",
+          "Apolice/ApoliceDetalhada:id",
+          new { Controller = "Apolice", Action = "ApoliceDetalhada", id = 0 }
+          );
 
             routes.MapRoute(
                 name: "Default",

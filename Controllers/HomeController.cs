@@ -16,17 +16,21 @@ namespace SistemaFB.Controllers
             {
                
                 ViewBag.Usuario = Session["Usuario"].ToString();
+                ViewBag.Email = Session["Email"].ToString();
+                ViewBag.Grupo = Session["Grupo"].ToString();
+                ViewBag.Ramal = Session["Ramal"].ToString();
+
                 return View();
 
             }
-            /*
+            
             else
             {
                 //Response.Redirect("/Login/Index");
                 //return null;
                 return RedirectToAction("Index", "Login");
-            }*/
-            return View();
+            }
+            
 
 
         }

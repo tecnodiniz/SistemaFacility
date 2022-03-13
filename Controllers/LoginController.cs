@@ -33,6 +33,9 @@ namespace SistemaFB.Controllers
                 Session["Autorizado"] = "OK";
                 Session.Remove("Erro");
                 Session["Usuario"] = usuario.Nome;
+                Session["Email"] = usuario.Email;
+                Session["Grupo"] = usuario.Grupo;
+                Session["Ramal"] = usuario.Ramal;
 
                 Response.Redirect("/Home/Index");
             }
@@ -42,6 +45,7 @@ namespace SistemaFB.Controllers
                 Response.Redirect("/Login/Index");
             }
         }
+   
 
 
     }

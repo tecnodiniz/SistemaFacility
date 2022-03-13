@@ -28,7 +28,7 @@ namespace SistemaFB.Models
         public bool Logar() {
 
             var result = false;
-            var sql = "SELECT Id, NomeUsuario, Login, Senha FROM UsuarioSistema WHERE Login = '"+ this.Login +"'";
+            var sql = "SELECT * FROM UsuarioSistema WHERE Login = '"+ this.Login +"'";
 
             try
             {
@@ -46,6 +46,9 @@ namespace SistemaFB.Models
                                     if (this.Senha == dr["Senha"].ToString())
                                     {
                                         Nome = dr["NomeUsuario"].ToString();
+                                        Email = dr["Email"].ToString();
+                                        Grupo = dr["Grupo"].ToString();
+                                        Ramal = Convert.ToInt32(dr["Ramal"]);
                                         result = true;
                                     }
                                 }

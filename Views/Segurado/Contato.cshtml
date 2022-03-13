@@ -2,22 +2,55 @@
     var segurado = ViewBag.Segurado;
 }
 
-<div class="form-group m-r-20">
-    <!--		Show Numbers Of Rows 		-->
-    <select class="form-control" name="state" id="maxRows">
-        <option value="5000">Show ALL Rows</option>
-        <option value="5">5</option>
-        <option value="10">10</option>
-        <option value="15">15</option>
-        <option value="20">20</option>
-        <option value="50">50</option>
-        <option value="70">70</option>
-        <option value="100">100</option>
+<style>
+ .table > tbody > tr > td{
+     cursor:pointer;
+ }
+</style>
+<div class="table-header" style="place-content:space-between;">
+
+    <strong class="col-md-6">
+        <a style="vertical-align:middle;" title="voltar" href="/Home/Clientes"><svg class="bi" width="25" height="25" fill="white" stroke="white"><use xlink:href="~/Content/bi.svg#chevron-left"></use></svg></a>
+        Apolices
+    </strong>
+
+    <div class="form-group m-r-20" style="display:none;">
+        <!--		Show Numbers Of Rows 		-->
+        <select class="form-control" name="state" id="maxRows">
+            <option value="5000">Show ALL Rows</option>
+            <option value="5">5</option>
+            <option value="10">10</option>
+            <option value="15">15</option>
+            <option value="20">20</option>
+            <option value="50">50</option>
+            <option value="70">70</option>
+            <option value="100">100</option>
+        </select>
+    </div>
+    <select style="color:black;">
+        <option>Pesquisar</option>
+        <option>Ramo</option>
+        <option>Seguradora</option>
+        <option>Apolice</option>
+        <option>Data</option>
+
     </select>
+    <div class="input-group" style="margin-bottom:20px;">
+
+        <input type="text" class="form-control" id="nome" name="nome" placeholder="" aria-describedby="sizing-addon2">
+        <span class="input-group-addon" id="sizing-addon2"><input type="submit" class="btn-group" value="Pesqusiar" /></span>
+    </div>
+
+
 </div>
+
 <div col-md-12>
-    <table class="table" style=" table-layout: fixed;" id="table-id">
+    <table class="table table-hover" style=" table-layout: fixed;" id="table-id">
+
         <tr>
+            <th>
+                Cod
+            </th>
 
             <th>
                 Documento
@@ -50,23 +83,25 @@
                 count++;
 
                 DateTime iDate = item.Fechada;
-                <tr>
-                    <td>@item.nApolice</td>
+            <tr>
+                <td><a href="/Apolice/ApoliceDetalhada/@item.ApoliceId">@item.ApoliceId</a></td>
 
-                    <td id="@i">@item.Seguradora</td>
+                <td>@item.nApolice</td>
 
-                    <td>@iDate.ToString("dd / MM / yyyy")</td>
+                <td id="@i">@item.Seguradora</td>
 
-                    @{ iDate = item.InicioVigencia;}
-                    <td>@iDate.ToString("dd / MM / yyyy")</td>
+                <td>@iDate.ToString("dd / MM / yyyy")</td>
 
-                    @{ iDate = item.TerminoVigencia;}
-                    <td>@iDate.ToString("dd / MM / yyyy")</td>
+                @{ iDate = item.InicioVigencia;}
+                <td>@iDate.ToString("dd / MM / yyyy")</td>
 
-                    <td title="@item.Ramo"> <p class="truncate-3l">@item.Ramo</p></td>
+                @{ iDate = item.TerminoVigencia;}
+                <td>@iDate.ToString("dd / MM / yyyy")</td>
 
-                    <td title="@item.Modalidade"><p class="truncate-3l">@item.Modalidade</p></td>
-                </tr>
+                <td title="@item.Ramo"> <p class="truncate-3l">@item.Ramo</p></td>
+
+                <td title="@item.Modalidade"><p class="truncate-3l">@item.Modalidade</p></td>
+            </tr>
 
             }
 
@@ -110,7 +145,7 @@
 <div class="table-header">
     <strong class="col-md-6">Informações do Cliente</strong>
 </div>
-<div style="margin-top:20px;" class="col-md-12">
+<div style="margin-top:20px; margin-bottom:50px;" class="col-md-12">
     <div class="col-md-1 label-side">
         <label for="name">Cliente</label>
         <label for="celular">Email</label>

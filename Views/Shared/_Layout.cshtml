@@ -14,6 +14,22 @@
     <title>@ViewBag.Title - Siste de Controle FacilityBond</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
+
+    <style>
+        .navbar li:hover svg {
+            fill: #08678C;
+        }
+        .navbar-nav > li > a {
+            padding-bottom: 0!important;
+        }
+        .navbar-brand > a{
+            text-decoration:none;
+            color:#f2f2f2;
+        }
+            .navbar-brand > a:hover {
+                color: #08678C;
+            }
+    </style>
 </head>
 <body>
     <div class="navbar navbar-light navbar-fixed-top shadow-b">
@@ -25,28 +41,39 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <div class="logo navbar-brand "style="display:none;">
-                        <img src="~/Content/img/fblogo.gif" class="img-responsive" />
+                    <div class="navbar-brand ">
+                        <a href="@Url.Action("Index","Home")" title="voltar para tela inicial">FACILITYBOND</a>
                     </div>
                 </div>
                 <div class="navbar-collapse collapse ">
                     <div class="centralizing">
                         <ul class="nav navbar-nav ">
-                            <li>@Html.ActionLink("Início", "Index", "Home")</li>
-                            <li>@Html.ActionLink("Clientes", "Clientes", "Home")</li>
+                            
+
+                            <li><a title="Clientes" href="@Url.Action("Clientes","Home")"><svg class="bi" width="25" height="25" fill="white"><use xlink:href="~/Content/bi.svg#person-fill"></use></svg></a></li>
+
+                            @*<li>@Html.ActionLink("Clientes", "Clientes", "Home")</li>*@
+                            @*<li>@Html.ActionLink("Sair", "Index", "Sair")</li>*@
                         </ul>
                     </div>
                     <!--perfil Usuario-->
-                    <div class="user f-right navbar-header" style="display:none;">
-                        <div class="personiddon">
+                    <div class="user f-right navbar-header" >
+                        <ul class="nav navbar-nav ">
+                              <li><a title="Sair" href="@Url.Action("Index","Sair")"><svg class="bi" width="25" height="25" fill="white"><use xlink:href="~/Content/bi.svg#box-arrow-left"></use></svg></a></li>
+
+                            @*<li>@Html.ActionLink("Clientes", "Clientes", "Home")</li>*@
+                            @*<li>@Html.ActionLink("Sair", "Index", "Sair")</li>*@
+                        </ul>
+
+                    @*    <div class="personiddon">
                             <img class="img-responsive img-rounded" width="50" height="50" src="~/Content/img/person-default.jpg" />
-                        </div>
+                        </div>*@
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <div class="container body-content shadow-b" ">
+    <div class="container body-content shadow-b" >
         @RenderBody()
         <hr />
         <footer class="col-md-12">
